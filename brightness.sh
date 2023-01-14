@@ -14,7 +14,10 @@ echo "Brightness settings"
 echo "Default screen: $monitorDef"
 echo "For changing use -s flag (ex: bash brigtness -s)"
 
-
+#on load set default brightness=0.5
+echo	"Setting brightness: 0.5 , Monitor: $monitorDef"
+xrandr --output $monitorDef --brightness 0.5
+	
 function setBrightness() {
 	if [ -z "$1" ]; then
 		echo $textInBright
@@ -29,8 +32,8 @@ function setBrightness() {
 	else
 		monitor=$monitorNew
 	fi
-	
-	#if brightness not set, default brigghtness=0.5
+		
+	#if brightness not set, default brightness=0.5
 	if [ -z "$brightness" ] && ! [ -z "$monitor" ]; then
 		echo	"Brightness: 0.5 , Monitor: $monitor"
 		xrandr --output $monitor --brightness 0.5
