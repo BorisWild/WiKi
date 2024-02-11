@@ -20,11 +20,10 @@ echo $target_ip
 
 echo "change ip tables? y/n"
 read answer
-if [ $answer == "y" ]; then
-	/sbin/ip rule add table 128 from $target_ip
-  /sbin/ip route add table 128 to $target_network dev $target_interface
-  /sbin/ip route add table 128 default via $target_gateway
-  exit 0
+if [ $answer == "n" ]; then
+#echo "Start up script"
+#sudo openvpn3 sessions-list
+#touch www.txt
 fi
 
 echo "Making sh file for changing ip tables... changeIpTables.sh"
