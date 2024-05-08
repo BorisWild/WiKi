@@ -2,7 +2,7 @@
 
 #execute the script
 #make it executable
-#chmode 775 basicscript.sh
+#chmod 775 basicscript.sh
 #./basicscript.sh
 #or just
 #bash basicscript.sh
