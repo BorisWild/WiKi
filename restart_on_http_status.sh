@@ -1,7 +1,8 @@
 #!/bin/bash
 #restart docker if 5** status resieved from backend host
+#create log file
 #touch reloadlog.log
-#chmod 0777 reloadlog.lo
+#chmod 0777 reloadlog.log
 
 URL="https://admin.kupitrip.online/admin/login"
 SCRIPT_DIR=$(dirname "$0")
@@ -15,10 +16,7 @@ log_status() {
 
 if [ "$1" == "force" ]; then
     docker restart $(docker ps -q)
-
-    #stop all containers except the latest one
-
-    docker stop $(docker ps -a -q | grep -v $(docker ps -q --latest))
+     
     log_status "Force restart of all containers."
     exit 0
 fi
@@ -28,6 +26,10 @@ HTTP_STATUS=$(curl -o /dev/null -s -w "%{http_code}" $URL)
 
 if [ "$HTTP_STATUS" -eq 504 ] || [ "$HTTP_STATUS" -eq 503 ] || [ "$HTTP_STATUS" -eq 502 ] || [ "$HTTP_STATUS" -eq 501 ] || [ "$HTTP_STATUS" -eq 500 ]; then
     docker restart $(docker ps -q)
+
+    #stop all containers except the latest one
+    docker stop $(docker ps -a -q | grep -v $(docker ps -q --latest))
+    
     log_status "Containers restarted due to HTTP status $HTTP_STATUS."
 else
     log_status "HTTP status $HTTP_STATUS - no action taken."
