@@ -1,4 +1,7 @@
 #!/bin/bash
+#restart docker if 5** status resieved from backend host
+#touch reloadlog.log
+#chmod 0777 reloadlog.lo
 
 URL="https://admin.kupitrip.online/admin/login"
 SCRIPT_DIR=$(dirname "$0")
