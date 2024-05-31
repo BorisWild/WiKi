@@ -6,7 +6,8 @@
 
 #volume attached to container:
 #sudo mkdir /var/log/service
-#sudo chmod 777 -R /var/log/service
+#sudo chown -R root:www-data service
+#sudo chmod 775 -R /var/log/service
 
 URL="https://admin.kupitrip.online/admin/login"
 SCRIPT_DIR=$(dirname "$0")
