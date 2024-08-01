@@ -9,7 +9,7 @@
 #sudo chown -R root:www-data service
 #sudo chmod 775 -R /var/log/service
 
-URL="https://admin.kupitrip.online/admin/login"
+URL="https://example.com"
 SCRIPT_DIR=$(dirname "$0")
 LOG_FILE="$SCRIPT_DIR/reloadlog.log"
 
