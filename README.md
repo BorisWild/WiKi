@@ -133,7 +133,7 @@ This will generate the following files:
 - `/etc/nginx/ssl/myapp.local.key`: The private key.
 - `/etc/nginx/ssl/myapp.local.crt`: The certificate.
 
-- Trust the Self-Signed Certificate (Optional)
+#### Trust the Self-Signed Certificate (Optional)
 Since this is a self-signed certificate, your browser will not automatically trust it, and you’ll see a security warning. To avoid this, you can manually trust the certificate by adding it to your trusted root certificates.
 
 - For Chrome (MacOS/Linux):
