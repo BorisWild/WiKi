@@ -280,9 +280,9 @@ If the command returns no output, then port 80 is now free.
 3. **Verify that port 80 is free**:
    - `sudo lsof -i :80`
 
-#### This will help you free up port 80 for other services.
+**This will help you free up port 80 for other services.**
 
-How to Fix This Issue
+### How to Fix HSTS Issue
 - Option 1: Clear the HSTS Settings in Your Browser
 You need to clear the HSTS policy for myapp.local from your browser. Here’s how to do it for different browsers:
 
