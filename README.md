@@ -179,7 +179,9 @@ Now you should be able to access your app securely using `https://myapp.local`. 
 
 By following these steps, you can easily access your local development environment using a custom domain name like `myapp.local`.
 
-## Troubles
+## Troubles:
+
+`nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)`
 
 To check what is running on port 80 and kill the process in Ubuntu, follow these steps:
 
