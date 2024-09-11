@@ -1,4 +1,4 @@
-To install **Nginx** and set up a **custom domain** to point to `localhost` on Ubuntu 20.04, follow these steps. We'll use Nginx as a reverse proxy to route requests from a custom domain (like `myapp.local`) to a local service running on `localhost`.
+To install **Nginx** and set up a **custom domain** to point to `localhost` on Ubuntu 20.04, follow these steps. We'll use Nginx as a reverse proxy to route requests from a custom domain (like `myapp.local`) to a local service running on `localhost:3000`.
 
 ### Steps:
 1. **Install Nginx**.
