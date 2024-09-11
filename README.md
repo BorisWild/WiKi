@@ -178,3 +178,86 @@ Now you should be able to access your app securely using `https://myapp.local`. 
 4. Optionally, **set up HTTPS** with a self-signed certificate.
 
 By following these steps, you can easily access your local development environment using a custom domain name like `myapp.local`.
+
+## Troubles
+
+To check what is running on port 80 and kill the process in Ubuntu, follow these steps:
+
+### 1. Check What Is Running on Port 80
+
+You can use the `lsof` (list open files) or `netstat` commands to check which process is using port 80.
+
+#### Using `lsof`:
+```bash
+sudo lsof -i :80
+```
+
+This will display a list of processes using port 80. You should see output like this:
+
+```
+COMMAND   PID   USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+nginx    12345  root   6u  IPv4 1234567      0t0  TCP *:http (LISTEN)
+```
+
+In this example, `nginx` is running on port 80, and the process ID (PID) is `12345`.
+
+#### Using `netstat`:
+```bash
+sudo netstat -tuln | grep :80
+```
+
+This will show something like:
+
+```
+tcp        0      0 0.0.0.0:80          0.0.0.0:*               LISTEN
+```
+
+If you want more detailed information about the process, use the `ps` command with the PID obtained from the `lsof` or `netstat` output.
+
+### 2. Kill the Process Running on Port 80
+
+Once you have the PID of the process using port 80, you can kill it using the `kill` command:
+
+```bash
+sudo kill -9 <PID>
+```
+
+For example, if the PID of the process is `12345`:
+
+```bash
+sudo kill -9 12345
+```
+
+Alternatively, you can use the process name (for example, `nginx`) to stop the service:
+
+#### If Nginx or Apache is Running:
+If the service running on port 80 is `nginx` or `apache2`, you can stop it directly using the following commands:
+
+```bash
+# For Nginx
+sudo systemctl stop nginx
+
+# For Apache
+sudo systemctl stop apache2
+```
+
+### 3. Verify Port 80 is Free
+
+After killing the process or stopping the service, verify that nothing is running on port 80:
+
+```bash
+sudo lsof -i :80
+```
+
+If the command returns no output, then port 80 is now free.
+
+### Summary
+
+1. **Find the process** using port 80:
+   - `sudo lsof -i :80`
+2. **Kill the process**:
+   - `sudo kill -9 <PID>`
+3. **Verify that port 80 is free**:
+   - `sudo lsof -i :80`
+
+This will help you free up port 80 for other services.
