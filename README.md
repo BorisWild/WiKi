@@ -114,11 +114,16 @@ At this point, you should be able to access your local service using your custom
 
 2. Open a browser and navigate to `http://myapp.local`. You should see your local service being served by Nginx.
 
-### Optional: Set Up HTTPS with a Self-Signed Certificate
+## Optional: Set Up HTTPS with a Self-Signed Certificate
 
 If you want to configure HTTPS, you can generate a self-signed certificate and set up Nginx to serve your app over HTTPS.
 
 #### Step 1: Generate SSL Certificates
+
+Make dir `ssl`
+```
+sudo mkdir -p /etc/nginx/ssl
+```
 
 ```bash
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/myapp.local.key -out /etc/nginx/ssl/myapp.local.crt -subj "/CN=myapp.local"
