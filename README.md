@@ -15,6 +15,12 @@ sudo apt update
 sudo apt install nginx
 ```
 
+on Mac:
+```
+brew update
+brew install nginx
+```
+
 After installation, Nginx should automatically start. You can check its status with:
 
 ```bash
