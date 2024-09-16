@@ -8,18 +8,15 @@ To install **Nginx** and set up a **custom domain** to point to `localhost` on U
 
 ### 1. Install Nginx
 
-First, install Nginx on your Ubuntu machine.
+First, install Nginx on your **Ubuntu** machine. For [MacOS](nginx-macos.md)
 
 ```bash
 sudo apt update
 sudo apt install nginx
 ```
 
-on Mac:
-```
-brew update
-brew install nginx
-```
+
+
 
 After installation, Nginx should automatically start. You can check its status with:
 
