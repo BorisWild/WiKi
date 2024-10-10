@@ -13,7 +13,7 @@
 После скачивания вам нужно создать конфигурационный файл для Xray. Файл конфигурации должен быть создан в формате JSON и назван `config.json`.
 
 #### Шаг 1: Создайте файл конфигурации
-0. Запросите у админа вашу ссылку для подключения:
+1. Запросите у админа вашу ссылку для подключения:
 ```
 vless://ID@SERVER_IP:SERVER_PORT?type=tcp&security=reality&pbk=PUBLIC_KEY=chrome&sni=yahoo.com&sid=SHORT_ID&spx=%2F&flow=xtls-rprx-vision#vvv-boris-sony
 ```
