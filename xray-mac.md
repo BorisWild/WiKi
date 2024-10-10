@@ -81,7 +81,7 @@ sudo nano /usr/local/etc/xray/config.json
         "vnext": [
           {
             "address": "SERVER_IP",
-            "port": SERVER_PORT,
+            "port": "SERVER_PORT",
             "users": [
               {
                 "id": "id из ссылки",
