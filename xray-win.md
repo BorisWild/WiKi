@@ -51,7 +51,7 @@ vless://ID@SERVER_IP:SERVER_PORT?type=tcp&security=reality&pbk=PUBLIC_KEY=chrome
         "vnext": [
           {
             "address": "SERVER_IP из ссылки",
-            "port": "SERVER_PORT из ссылки",
+            "port": SERVER_PORT из ссылки,
             "users": [
               {
                 "id": "ID из ссылки",
