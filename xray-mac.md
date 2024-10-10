@@ -52,15 +52,26 @@ sudo nano /usr/local/etc/xray/config.json
 
 ```json
 {
+   "log":{
+     "loglevel":"debug"
+   },
   "inbounds": [
     {
+      "listen": "127.0.0.1",
       "port": 1080,
       "protocol": "socks",
       "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "ip": "127.0.0.1"
-      }
+        "udp": true
+      },
+      "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ],
+                "routeOnly": true
+            }
     }
   ],
   "outbounds": [
@@ -69,11 +80,11 @@ sudo nano /usr/local/etc/xray/config.json
       "settings": {
         "vnext": [
           {
-            "address": "188.166.110.123",
-            "port": 443,
+            "address": "SERVER_IP",
+            "port": SERVER_PORT,
             "users": [
               {
-                "id": "a6370488-60cd-4d5a-9b27-77d890f60b3b",
+                "id": "id из ссылки",
                 "flow": "xtls-rprx-vision",
                 "encryption": "none"
               }
@@ -88,11 +99,12 @@ sudo nano /usr/local/etc/xray/config.json
           "show": false,
           "fingerprint": "chrome",
           "serverName": "yahoo.com",
-          "publicKey": "q0vV_RK7HqG5CMUIWwCtqTDVAhq2uagrTI3sIOONJx0",
-          "shortId": "8068583d28105b",
+          "publicKey": "public_key из ссылки",
+          "shortId": "shord_id из ссылки",
           "spiderX": "/"
         }
-      }
+      },
+     "tag":"proxy"
     }
   ]
 }
