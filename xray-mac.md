@@ -80,11 +80,11 @@ sudo nano /usr/local/etc/xray/config.json
       "settings": {
         "vnext": [
           {
-            "address": "SERVER_IP",
-            "port": "SERVER_PORT",
+            "address": "SERVER_IP из ссылки",
+            "port": SERVER_PORT из ссылки,
             "users": [
               {
-                "id": "id из ссылки",
+                "id": "ID из ссылки",
                 "flow": "xtls-rprx-vision",
                 "encryption": "none"
               }
@@ -99,8 +99,8 @@ sudo nano /usr/local/etc/xray/config.json
           "show": false,
           "fingerprint": "chrome",
           "serverName": "yahoo.com",
-          "publicKey": "public_key из ссылки",
-          "shortId": "shord_id из ссылки",
+          "publicKey": "PUBLIC_KEY из ссылки",
+          "shortId": "SHORT_ID из ссылки",
           "spiderX": "/"
         }
       },
@@ -112,7 +112,7 @@ sudo nano /usr/local/etc/xray/config.json
 
 #### Шаг 3: Сохраните изменения
 
-После внесения изменений сохраните файл и выйдите из редактора (если используете `nano`, нажмите **Ctrl + X**, затем **Y** и **Enter**).
+После внесения изменений сохраните файл и выйдите из редактора (если используете `nano`, нажмите **Ctrl + o**, затем **Enter** и нажмите **Ctrl + X**).
 
 ### 4. **Запуск Xray**
 
