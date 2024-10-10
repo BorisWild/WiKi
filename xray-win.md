@@ -18,7 +18,7 @@
 vless://ID@SERVER_IP:SERVER_PORT?type=tcp&security=reality&pbk=PUBLIC_KEY=chrome&sni=yahoo.com&sid=SHORT_ID&spx=%2F&flow=xtls-rprx-vision#vvv-boris-sony
 ```
 2. Откройте текстовый редактор (например, Notepad) и создайте файл `config.json`.
-3. Вставьте конфигурацию, подходящую для вашего случая (например, для работы с VLESS и Reality, как в предыдущих примерах). Пример файла конфигурации для VLESS с Reality:
+3. Вставьте конфигурацию, подходящую для вашего случая (например, для работы с VLESS и Reality) и дополните его параметрами из ссылки:
 
 ```json
 {
@@ -50,11 +50,11 @@ vless://ID@SERVER_IP:SERVER_PORT?type=tcp&security=reality&pbk=PUBLIC_KEY=chrome
       "settings": {
         "vnext": [
           {
-            "address": "SERVER_IP",
-            "port": SERVER_PORT,
+            "address": "SERVER_IP из ссылки",
+            "port": "SERVER_PORT из ссылки",
             "users": [
               {
-                "id": "id из ссылки",
+                "id": "ID из ссылки",
                 "flow": "xtls-rprx-vision",
                 "encryption": "none"
               }
@@ -69,8 +69,8 @@ vless://ID@SERVER_IP:SERVER_PORT?type=tcp&security=reality&pbk=PUBLIC_KEY=chrome
           "show": false,
           "fingerprint": "chrome",
           "serverName": "yahoo.com",
-          "publicKey": "public_key из ссылки",
-          "shortId": "shord_id из ссылки",
+          "publicKey": "PUBLIC_KEY из ссылки",
+          "shortId": "SHORT_ID из ссылки",
           "spiderX": "/"
         }
       },
