@@ -27,6 +27,10 @@ brew install xray
 ```
 
 ### 3. **Создание конфигурационного файла**
+#### Шаг 0. Запросите у админа вашу ссылку для подключения:
+```
+vless://ID@SERVER_IP:SERVER_PORT?type=tcp&security=reality&pbk=PUBLIC_KEY=chrome&sni=yahoo.com&sid=SHORT_ID&spx=%2F&flow=xtls-rprx-vision#vvv-boris-sony
+```
 
 Xray требует файла конфигурации в формате JSON. В macOS конфигурационные файлы обычно находятся в `/usr/local/etc/xray/`. Вам нужно создать файл `config.json`.
 
